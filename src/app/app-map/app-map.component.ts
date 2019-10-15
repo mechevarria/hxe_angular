@@ -11,13 +11,27 @@ import { Map } from 'mapbox-gl';
 })
 export class AppMapComponent implements OnInit {
   geojson: any;
+  draw: any;
 
   constructor(private appMapService: AppMapService, private messageService: MessageService) {
   }
 
   loadMap(map: Map) {
-    const draw = new MapboxDraw();
-    map.addControl(draw, 'top-right');
+    this.draw = new MapboxDraw({
+      displayControlsDefault: false,
+      controls: {
+        polygon: true,
+        trash: true
+      }
+    });
+    map.addControl(this.draw, 'top-right');
+    map.on('draw.update', this.updateArea);
+    map.on('draw.create', this.updateArea);
+    map.on('draw.delete', this.updateArea);
+  }
+
+  updateArea(e: any) {
+    console.log(e);
   }
 
   ngOnInit() {
