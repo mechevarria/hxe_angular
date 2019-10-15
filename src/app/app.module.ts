@@ -23,6 +23,7 @@ import { AppMapComponent } from './app-map/app-map.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryApiService } from './in-memory-api.service';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     BreadcrumbComponent,
     ChartsComponent,
     SidebarComponent,
-    AppMapComponent
+    AppMapComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

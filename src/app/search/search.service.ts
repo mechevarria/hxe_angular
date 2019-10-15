@@ -1,29 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
 import { MessageService } from '../message/message.service';
-import { Observable, of } from 'rxjs/index';
-
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EventService {
-  private url = '/api/index.xsjs';
+export class SearchService {
+
+  private url = '/api/search.xsjs';
 
   constructor(private messageService: MessageService, private http: HttpClient) {
   }
 
-  getEvents(page: number, limit: number): Observable<any> {
+  doSearch(search: string, limit: number, fuzzy: number): Observable<any> {
     const options: any = {
       params: new HttpParams()
+        .append('search', search)
         .append('limit', limit.toString())
-        .append('offset', (page - 1).toString())
+        .append('fuzzy', fuzzy.toString())
     };
 
     return this.http.get<any>(this.url, options).pipe(
       catchError(error => {
-        this.messageService.error(`getEvents() ${error.message}`);
+        this.messageService.error(`search() ${error.message}`);
         return of(null);
       })
     )

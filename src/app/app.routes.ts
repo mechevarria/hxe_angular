@@ -3,6 +3,7 @@ import {HomeComponent} from './home/home.component';
 import {TableComponent} from './table/table.component';
 import {ChartsComponent} from './charts/charts.component';
 import { AppMapComponent } from './app-map/app-map.component';
+import { SearchComponent } from './search/search.component';
 
 export const AppRoutes: Routes = [
   {
@@ -31,6 +32,13 @@ export const AppRoutes: Routes = [
         component: AppMapComponent,
         data: {
           breadcrumb: 'Map'
+        }
+      },
+      {
+        path: 'search',
+        component: SearchComponent,
+        data: {
+          breadcrumb: 'Search'
         }
       }
     ]
