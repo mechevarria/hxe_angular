@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../message/message.service';
 import { Color } from 'ng2-charts'
+import { ChartsService } from './charts.service';
 
 @Component({
   selector: 'app-charts',
@@ -8,32 +8,42 @@ import { Color } from 'ng2-charts'
 })
 export class ChartsComponent implements OnInit {
   // colors pulled from https://coreui.io/docs/getting-started/ui-kit/
-  colors: Color[] = [{ backgroundColor: ['#f86c6b', '#20a8d8', '#ffc107', '#4dbd74', '#a4b7c1', '#63c2de', '#29363d'] }];
+  colors: Color[] = [{ backgroundColor: ['#f86c6b', '#20a8d8', '#ffc107', '#4dbd74', '#a4b7c1', '#63c2de', '#29363d', '#f86c6b', '#20a8d8', '#ffc107', '#4dbd74', '#a4b7c1'] }];
 
-  doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  doughnutChartData: number[] = [];
-  doughnutChartType = 'doughnut';
+  doughnutLabels: string[] = [];
+  doughnutData: number[] = [];
+  doughnutType = 'doughnut';
 
-  barChartOptions: any = {
+  barOptions: any = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  barChartLabels: string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  barChartType = 'bar';
-  barChartLegend = true;
-  barChartData: any[] = [{}];
+  barLabels: string[] = [];
+  barType = 'bar';
+  barLegend = false;
+  barData: any[] = [{}];
 
-  constructor(private messageService: MessageService) { }
+  constructor(private chartService: ChartsService) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.barChartData = [
-        { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-        { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+    this.chartService.getData().subscribe(res => {
+
+      res.donut.forEach(item => {
+        this.doughnutLabels.push(item.EVENT_TYPE);
+        this.doughnutData.push(item.COUNT);
+      });
+
+      let values = [];
+      res.bar.forEach(item => {
+        this.barLabels.push(item.COUNTRY_NAME);
+        values.push(item.COUNT);
+      })
+
+      this.barData = [
+        { data: values }
       ];
-      this.doughnutChartData = [350, 450, 100];
-      this.messageService.success('Successfully loaded charts view');
-    }, 500);
+
+    });
 
   }
 }
