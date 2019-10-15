@@ -1,5 +1,3 @@
-import { MultiPolygon } from 'geojson';
-
 export class Event {
   EVENT_ID: string;
   EVENT_DATE: Date;
@@ -8,6 +6,6 @@ export class Event {
   ACTOR_2: string;
   COUNTRY_NAME: string;
   FATALITIES: number;
-  GEOLOCATION: MultiPolygon;
+  GEO_LOCATION: any;
   NOTES: string;
 }

@@ -16,13 +16,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ChartsComponent } from './charts/charts.component';
 import { ChartsModule } from 'ng2-charts';
-import { FormComponent } from './form/form.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { AppMapComponent } from './app-map/app-map.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryApiService } from './in-memory-api.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { InMemoryApiService } from './in-memory-api.service';
     HeaderComponent,
     BreadcrumbComponent,
     ChartsComponent,
-    FormComponent,
     SidebarComponent,
     AppMapComponent
   ],
@@ -43,6 +42,7 @@ import { InMemoryApiService } from './in-memory-api.service';
     HttpClientModule,
     RouterModule.forRoot(AppRoutes),
     BsDropdownModule.forRoot(),
+    ModalModule.forRoot(),
     PaginationModule.forRoot(),
     CollapseModule.forRoot(),
     CommonModule,
@@ -64,4 +64,4 @@ import { InMemoryApiService } from './in-memory-api.service';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
