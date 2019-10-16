@@ -1,8 +1,12 @@
 # HXE Angular
 
-Starter seed project for [Angular](https://angular.io/) and [Bootstrap](https://getbootstrap.com/).  This project was generated with [Angular CLI](https://github.com/angular/angular-cli). [coreui](https://coreui.io/docs/getting-started/introduction/) is already integrated.  The project is also configured as a [docker](https://docs.docker.com/install/) container
+Client appliation for [SAP HANA](https://www.sap.com/products/hana.html) services that taking advantage of the built-in REST, Search and Spatial engines. The backend project is located at [github/mechevarria/hxe_mta](https://github.com/mechevarria/hxe_mta). This project was generated with [Angular CLI](https://github.com/angular/angular-cli). [coreui](https://coreui.io/docs/getting-started/introduction/) is already integrated.  The project is also configured as a [docker](https://docs.docker.com/install/) container. Data is provided by the [Armed Conflict Location & Event Data](https://www.acleddata.com) project
 
- ![screenshot.png](screenshot.png)
+ ![screenshot1.png](screenshot1.png)
+
+ ![screenshot2.png](screenshot2.png)
+
+ ![screenshot3.png](screenshot3.png)
 
 ## Install
 
@@ -40,6 +44,8 @@ Run the continer with this script
 > `docker-run.sh`  
 
 ## Further help
+
+To learn more about SAP HANA development capabilities, go to [developers.sap.com](https://developers.sap.com/)
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
