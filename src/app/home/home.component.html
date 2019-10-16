@@ -1,7 +1,30 @@
-<div class="card-deck" *ngIf="route.children.length === 0">
+<div class="card-deck mb-3" *ngIf="route.children.length === 0">
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Welcome</h4>
+      <p class="card-text">
+        This application uses the built-in <b>REST, Search and Spatial engines</b> of
+        <a target="_blank" href="https://www.sap.com/products/hana.html" role="button">SAP Hana</a>
+        along with data from the
+        <a target="_blank" href="https://www.acleddata.com/" role="button"> Armed Conflict Location & Event Data
+          Project</a>
+      </p>
+      <p class="card-text">
+        <a target="_blank" href="https://www.sap.com/products/hana.html" role="button" class="mr-3">
+          <img src="assets/img/hana.png" height="55" alt="hana" />
+        </a>
+        <a target="_blank" href="https://www.acleddata.com/" role="button">
+          <img src="assets/img/acled.png" height="65" alt="acled" />
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="card-deck" *ngIf="route.children.length === 0">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Frameworks</h4>
       <p class="card-text">
         This application was created using the
         <a target="_blank" href="https://angular.io/" role="button">Angular</a>
