@@ -60,7 +60,7 @@
       <li class="list-group-item"><b>Fatalities:</b> {{ detail.FATALITIES }}</li>
       <li class="list-group-item"><b>Notes:</b> {{ detail.NOTES }}</li>
     </ul>
-    <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[10]" [center]="detail.GEO_LOCATION.coordinates">
+    <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[11]" [center]="detail.GEO_LOCATION.coordinates">
       <mgl-marker [lngLat]="detail.GEO_LOCATION.coordinates" #marker>
         <!-- icons from https://iconscout.com/icon/location-62-->
         <div class="marker" [ngStyle]="{'background-image': 'url(assets/img/marker-red.svg)'}"></div>

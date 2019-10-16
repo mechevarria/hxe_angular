@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
 import { MessageService } from '../message/message.service';
 import { Observable, of } from 'rxjs/index';
 
@@ -22,6 +22,12 @@ export class EventService {
     };
 
     return this.http.get<any>(this.url, options).pipe(
+      map((res: any) => {
+        res.results.forEach(event => {
+          event.GEO_LOCATION = JSON.parse(event.GEO_LOCATION)
+        });
+        return res;
+      }),
       catchError(error => {
         this.messageService.error(`getEvents() ${error.message}`);
         return of(null);

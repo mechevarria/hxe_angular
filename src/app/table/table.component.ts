@@ -23,7 +23,6 @@ export class TableComponent implements OnInit {
 
   viewEvent(template: TemplateRef<any>, event: Event) {
     this.detail = event;
-    this.detail.GEO_LOCATION = JSON.parse(this.detail.GEO_LOCATION);
     const config: ModalOptions = { class: 'modal-lg'};
     this.modalRef = this.modalService.show(template, config);
   }
