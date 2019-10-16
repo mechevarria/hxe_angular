@@ -6,6 +6,7 @@ let logger = require('morgan');
 let http = require('http');
 let path = require('path');
 let proxy = require('http-proxy-middleware');
+let bodyParser = require('body-parser');
 
 let app = express();
 
@@ -18,6 +19,23 @@ app.use(logger('combined'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 
+// needed to fix POST and PUT not being proxied
+let restream = function (proxyReq, req) {
+  if (req.body) {
+    let bodyData = JSON.stringify(req.body);
+    // incase if content-type is application/x-www-form-urlencoded -> we need to change to application/json
+    proxyReq.setHeader('Content-Type', 'application/json');
+    proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
+    // stream the content
+    proxyReq.write(bodyData);
+  }
+};
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 // proxy for HANA Express REST api
 app.use(
   '/api/*',
@@ -26,6 +44,7 @@ app.use(
     secure: false,
     changeOrigin: true,
     logLevel: 'debug',
+    onProxyReq: restream,
     pathRewrite: {
       '^/api': ''
     }
