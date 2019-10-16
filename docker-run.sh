@@ -6,5 +6,5 @@ docker run \
     -p ${port}:${port} \
     -e PORT=${port} \
     -e HXE_HOST=${HXE_HOST} \
-    -e HXE_PORT=${HXE_PORT}
+    -e HXE_PORT=${HXE_PORT} \
     localhost/hxe_angular
