@@ -12,16 +12,10 @@ import { Polygon } from 'geojson';
 export class AppMapService {
   private mapUrl = 'api/map.xsjs';
 
-  constructor(private messageService: MessageService, private http: HttpClient) {}
+  constructor(private messageService: MessageService, private http: HttpClient) { }
 
   postData(polygon: Polygon): Observable<any> {
     return this.http.post<any>(this.mapUrl, polygon).pipe(
-      map((res: any) => {
-        res.results.forEach(event => {
-          event.GEO_LOCATION = JSON.parse(event.GEO_LOCATION)
-        });
-        return res;
-      }),
       catchError(res => {
         return this.handleError('postData()', res);
       })

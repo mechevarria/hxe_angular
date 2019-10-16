@@ -2,19 +2,35 @@
   <div class="card">
     <div class="card-header">Map</div>
     <div class="card-body">
-      <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[12]" [center]="[36.1424, 32.8504]" (load)="loadMap($event)">
-        <mgl-control mglExtensionDraw></mgl-control>
-        <span *ngFor="let event of events"> -->
-          <mgl-marker [lngLat]="event.GEO_LOCATION.coordinates" #marker>
-            <div class="marker" [ngStyle]="{
-                'background-image': 'url(assets/img/marker-red.svg)'
-              }"></div>
-          </mgl-marker>
-          <mgl-popup [marker]="marker" [offset]="[0, -15]">
-            <div class="card-text">{{ event.NOTES }}</div>
-          </mgl-popup>
-        </span>
+      <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[12]" [center]="[36.1424, 32.8504]"
+        (load)="loadMap($event)">
+        <mgl-geojson-source id="geojson" [data]="featureCollection" [cluster]="true" [clusterRadius]="80">
+        </mgl-geojson-source>
+        <mgl-markers-for-clusters source="geojson">
+          <ng-template mglPoint let-feature>
+            <div class="marker"></div>
+          </ng-template>
+          <ng-template mglClusterPoint let-feature>
+            <div class="marker-cluster">
+              {{ feature.properties?.point_count }}
+            </div>
+          </ng-template>
+        </mgl-markers-for-clusters>
       </mgl-map>
+      <div class="table-responsive mt-3" *ngIf="featureCollection">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <th>ID</th>
+            <th>Notes</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let feature of featureCollection.features">
+              <td>{{ feature.properties.id }}</td>
+              <td>{{ feature.properties.notes }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
