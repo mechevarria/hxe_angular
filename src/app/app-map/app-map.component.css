@@ -3,6 +3,10 @@ mgl-map {
   width: 100%;
 }
 
+.app-row {
+  cursor: pointer;
+}
+
 .marker {
   width: 30px;
   height: 30px;

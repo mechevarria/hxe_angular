@@ -4,14 +4,14 @@
     <div class="card-body">
       <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[12]" [center]="[36.1424, 32.8504]"
         (load)="loadMap($event)">
-        <mgl-geojson-source id="geojson" [data]="featureCollection" [cluster]="true" [clusterRadius]="80">
+        <mgl-geojson-source id="geojson" [data]="featureCollection" [cluster]="true" [clusterRadius]="80" *ngIf="featureCollection.features.length > 0">
         </mgl-geojson-source>
-        <mgl-markers-for-clusters source="geojson">
+        <mgl-markers-for-clusters source="geojson" *ngIf="featureCollection.features.length > 0">
           <ng-template mglPoint let-feature>
-            <div class="marker"></div>
+            <div class="marker" (click)="setCenter(feature)"></div>
           </ng-template>
           <ng-template mglClusterPoint let-feature>
-            <div class="marker-cluster">
+            <div class="marker-cluster" (click)="setCenter(feature)">
               {{ feature.properties?.point_count }}
             </div>
           </ng-template>
@@ -24,7 +24,7 @@
             <th>Notes</th>
           </thead>
           <tbody>
-            <tr *ngFor="let feature of featureCollection.features">
+            <tr *ngFor="let feature of featureCollection.features" (click)="setCenter(feature)" class="app-row">
               <td>{{ feature.properties.id }}</td>
               <td>{{ feature.properties.notes }}</td>
             </tr>
