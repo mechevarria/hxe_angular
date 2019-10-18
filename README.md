@@ -19,7 +19,7 @@ Client appliation for [SAP HANA](https://www.sap.com/products/hana.html) service
 
 > `npm run watch`
 
-* In a separate terminal run the express server
+* In a separate terminal run the [express](https://expressjs.com/) server
 
 >`npm run start`
 
@@ -53,10 +53,8 @@ To get started with Angular, this is an excellent official [tutorial](https://an
 
 Mapbox component provided by [ngx-mapbox-gl](https://github.com/Wykks/ngx-mapbox-gl)
 
-Dropdown components were created using [ngx-bootstrap](https://github.com/valor-software/ngx-bootstrap)
+Bootstrap components were created using [ngx-bootstrap](https://github.com/valor-software/ngx-bootstrap)
 
 Chart library by [ng2-charts](https://valor-software.com/ng2-charts/)
-
-Table implementation done with [angular-datatables](https://l-lin.github.io/angular-datatables/#/welcome)
 
 Toast notification done with [ngx-toastr](https://scttcper.github.io/ngx-toastr/)
