@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AppMapService } from './app-map.service';
 import { MessageService } from '../message/message.service';
 import * as MapboxDraw from '@mapbox/mapbox-gl-draw';
-import { Map, Point } from 'mapbox-gl';
-import { FeatureCollection, Feature } from 'geojson';
+import { Map } from 'mapbox-gl';
+import { FeatureCollection } from 'geojson';
 
 @Component({
   selector: 'app-app-map',
