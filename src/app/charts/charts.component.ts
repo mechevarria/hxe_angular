@@ -10,9 +10,9 @@ export class ChartsComponent implements OnInit {
   // colors pulled from https://coreui.io/docs/getting-started/ui-kit/
   colors: Color[] = [{ backgroundColor: ['#f86c6b', '#20a8d8', '#ffc107', '#4dbd74', '#a4b7c1', '#63c2de', '#29363d', '#f86c6b', '#20a8d8', '#ffc107', '#4dbd74', '#a4b7c1'] }];
 
-  doughnutLabels: string[] = [];
-  doughnutData: number[] = [];
-  doughnutType = 'doughnut';
+  donutLabels: string[] = [];
+  donutData: number[] = [];
+  donutType = 'doughnut';
 
   barOptions: any = {
     scaleShowVerticalLines: false,
@@ -27,22 +27,10 @@ export class ChartsComponent implements OnInit {
 
   ngOnInit() {
     this.chartService.getData().subscribe(res => {
-
-      res.donut.forEach(item => {
-        this.doughnutLabels.push(item.EVENT_TYPE);
-        this.doughnutData.push(item.COUNT);
-      });
-
-      let values = [];
-      res.bar.forEach(item => {
-        this.barLabels.push(item.COUNTRY_NAME);
-        values.push(item.COUNT);
-      })
-
-      this.barData = [
-        { data: values }
-      ];
-
+      this.donutLabels = res.donutLabels;
+      this.donutData = res.donutData;
+      this.barLabels = res.barLabels;
+      this.barData = res.barData;
     });
 
   }
