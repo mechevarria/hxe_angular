@@ -61,12 +61,12 @@
           </thead>
           <tbody>
             <tr *ngFor="let event of events">
-              <td>{{ event.EVENT_ID }}</td>
-              <td>{{ event.EVENT_DATE | date }}</td>
-              <td>{{ event.EVENT_TYPE }}</td>
-              <td>{{ event.COUNTRY_NAME }}</td>
-              <td>{{ event.FATALITIES }}</td>
-              <td><span [innerHTML]="event.NOTES"></span></td>
+              <td>{{ event.eventId }}</td>
+              <td>{{ event.eventDate | date }}</td>
+              <td>{{ event.eventType }}</td>
+              <td>{{ event.countryName }}</td>
+              <td>{{ event.fatalities }}</td>
+              <td><span [innerHTML]="event.notes"></span></td>
             </tr>
           </tbody>
         </table>

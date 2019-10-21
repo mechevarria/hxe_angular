@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { IconDefinition, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { Event } from '../table/event';
+import { Event } from '../event/event';
 import { SearchService } from './search.service';
 import { MessageService } from '../message/message.service';
 
