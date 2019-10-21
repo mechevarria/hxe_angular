@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app.routes';
 import { BsDropdownModule, CollapseModule, PaginationModule } from 'ngx-bootstrap';
-import { TableComponent } from './table/table.component';
+import { EventComponent } from './event/event.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -26,7 +26,7 @@ import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent,
+    EventComponent,
     HomeComponent,
     HeaderComponent,
     BreadcrumbComponent,

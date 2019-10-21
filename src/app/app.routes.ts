@@ -1,7 +1,7 @@
-import {Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {TableComponent} from './table/table.component';
-import {ChartsComponent} from './charts/charts.component';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { EventComponent } from './event/event.component';
+import { ChartsComponent } from './charts/charts.component';
 import { AppMapComponent } from './app-map/app-map.component';
 import { SearchComponent } from './search/search.component';
 
@@ -22,7 +22,7 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'events',
-        component: TableComponent,
+        component: EventComponent,
         data: {
           breadcrumb: 'Events'
         }
