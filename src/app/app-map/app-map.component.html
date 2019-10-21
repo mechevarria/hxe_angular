@@ -21,11 +21,23 @@
         <table class="table table-striped table-bordered">
           <thead>
             <th>ID</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Actor 1</th>
+            <th>Actor 2</th>
+            <th>Country</th>
+            <th>Fatalities</th>
             <th>Notes</th>
           </thead>
           <tbody>
             <tr *ngFor="let feature of featureCollection.features" (click)="setCenter(feature)" class="app-row">
-              <td>{{ feature.properties.id }}</td>
+              <td>{{ feature.properties.eventId }}</td>
+              <td>{{ feature.properties.eventType }}</td>
+              <td>{{ feature.properties.eventDate | date }}</td>
+              <td>{{ feature.properties.actor1 }}</td>
+              <td>{{ feature.properties.actor2 }}</td>
+              <td>{{ feature.properties.countryName }}</td>
+              <td>{{ feature.properties.fatalities }}</td>
               <td>{{ feature.properties.notes }}</td>
             </tr>
           </tbody>
