@@ -19,7 +19,9 @@ ARG HXE_PORT
 ENV HXE_HOST=${HXE_HOST} \
   HXE_PORT=${HXE_PORT} \
   uri='$uri' \
-  args='$args'
+  args='$args' \
+  host='$host' \
+  request_uri='$request_uri'
 
 COPY ./nginx/host.* /etc/nginx/
 

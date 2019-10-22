@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-port=443
 
 docker run \
-  -p ${port}:${port} \
+  -p 80:80 \
+  -p 443:443 \
   localhost/hxe-angular
