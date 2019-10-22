@@ -4,6 +4,8 @@ server {
   return 301 https://$host$request_uri;
 }
 server {
+  gzip                on;
+  gzip_types          text/css application/json application/javascript;
   listen              443 ssl;
   listen              [::]:443 ssl;
   ssl_certificate     /etc/nginx/host.cert;
