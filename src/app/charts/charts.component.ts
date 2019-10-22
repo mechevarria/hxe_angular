@@ -27,10 +27,12 @@ export class ChartsComponent implements OnInit {
 
   ngOnInit() {
     this.chartService.getData().subscribe(res => {
-      this.donutLabels = res.donutLabels;
-      this.donutData = res.donutData;
-      this.barLabels = res.barLabels;
-      this.barData = res.barData;
+      if (res !== null) {
+        this.donutLabels = res.donutLabels;
+        this.donutData = res.donutData;
+        this.barLabels = res.barLabels;
+        this.barData = res.barData;
+      }
     });
 
   }
