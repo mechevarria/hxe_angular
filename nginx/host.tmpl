@@ -1,20 +1,19 @@
 server {
     listen              443 ssl;
-    listen              [::]:443 ssl;
     ssl_certificate     /etc/nginx/host.cert;
     ssl_certificate_key /etc/nginx/host.key;
     server_name         localhost;
 
     location / {
-        root   /usr/share/nginx/html;
-        index  index.html index.htm;
+      root   /usr/share/nginx/html;
+      index  index.html index.htm;
 
-        # For Angular routing
-        try_files $uri $uri/ /index.html?$args;
+      # For Angular routing
+      try_files $uri $uri/ /index.html?$args;
     }
 
-    # important to have trailing / for url rewriting
     location /api/ {
+      # important to have trailing / for url rewriting
       proxy_pass https://${HXE_HOST}:${HXE_PORT}/;
     }
 
