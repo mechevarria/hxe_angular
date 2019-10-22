@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 docker build \
-    -t localhost/hxe_angular . \
-    --build-arg port=8080
+  --build-arg HXE_HOST=${HXE_HOST} \
+  --build-arg HXE_PORT=${HXE_PORT} \
+  -t localhost/hxe-angular .
