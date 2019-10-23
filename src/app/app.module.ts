@@ -11,7 +11,6 @@ import { EventComponent } from './event/event.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ChartsComponent } from './charts/charts.component';
@@ -22,6 +21,7 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { AppMapComponent } from './app-map/app-map.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SearchComponent } from './search/search.component';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -48,10 +48,16 @@ import { SearchComponent } from './search/search.component';
     CommonModule,
     BrowserAnimationsModule,
     ChartsModule,
-    ToastrModule.forRoot({
-      maxOpened: 2,
-      positionClass: 'toast-bottom-center',
-      autoDismiss: true
+    NotifierModule.withConfig({
+      position: {
+        horizontal: {
+          position: 'right'
+        },
+        vertical : {
+          position: 'top',
+          distance: 55
+        }
+      }
     }),
     NgxMapboxGLModule.withConfig({
       accessToken: 'pk.eyJ1IjoibWVjaGV2YXJyaWEiLCJhIjoiY2pxbXNuMXF0MGwzNTQ5bzJwNGtyMTRqdyJ9.WZfALlPxuOveabQDrroLcQ'

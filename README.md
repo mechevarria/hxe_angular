@@ -71,4 +71,4 @@ Bootstrap components were created using [ngx-bootstrap](https://github.com/valor
 
 Chart library by [ng2-charts](https://valor-software.com/ng2-charts/)
 
-Toast notification done with [ngx-toastr](https://scttcper.github.io/ngx-toastr/)
+Notifications done with [angular-notifier](https://github.com/dominique-mueller/angular-notifier)
