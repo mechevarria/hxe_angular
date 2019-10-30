@@ -9,7 +9,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class EventService {
-  private url = '/api/index.xsjs';
+  private url = '/api/event.xsjs';
 
   constructor(private messageService: MessageService, private http: HttpClient) {
   }
