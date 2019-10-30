@@ -12,7 +12,19 @@ Client appliation for [SAP HANA](https://www.sap.com/products/hana.html) service
 #
  ![event.png](screenshots/event.png)
 
-## Install
+## Run in production mode as a docker container
+
+* Build the multistage image with this script
+
+> `docker-build.sh`
+
+*  In order for the following script to run, two environment variables to be set `HXE_HOST` and `HXE_PORT`, which is the host and port of the [HANA REST service api](https://github.com/mechevarria/hxe_mta) Example: `HXE_HOST=192.168.56.101` and `HXE_PORT=51006`
+
+* Run the nginx continer with this script
+
+> `docker-run.sh`  
+
+## Local Install
 
 * Install dependencies with 
 >`npm install`
@@ -35,6 +47,8 @@ Client appliation for [SAP HANA](https://www.sap.com/products/hana.html) service
 
 The nginx server will be running on [https://localhost](https://localhost)
 
+Whenever you make code changes the `watch` task will automatically rebuild and the changes reflected on the running nginx web server.
+
 ## Code scaffolding
 
 * Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -43,17 +57,6 @@ The nginx server will be running on [https://localhost](https://localhost)
 
 * Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Run in production mode as a docker container
-
-* Build the multistage image with this script
-
-> `docker-build.sh`
-
-*  In order for the following script to run, two environment variables to be set `HXE_HOST` and `HXE_PORT`, which is the host and port of the [HANA REST service api](https://github.com/mechevarria/hxe_mta) Example: `HXE_HOST=192.168.56.101` and `HXE_PORT=51006`
-
-* Run the nginx continer with this script
-
-> `docker-run.sh`  
 
 ## Further help
 
