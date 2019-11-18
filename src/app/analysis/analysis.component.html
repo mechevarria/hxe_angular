@@ -26,8 +26,9 @@
         </div>
       </div>
     </form>
-    <div>
-      <pre>{{ results | json }}</pre>
+    <div class="d-flex justify-content-center">
+      <angular-tag-cloud [data]="data" [height]="options.height" [overflow]="options.overflow">
+      </angular-tag-cloud>
     </div>
   </div>
 </div>
