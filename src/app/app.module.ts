@@ -23,6 +23,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { SearchComponent } from './search/search.component';
 import { NotifierModule } from 'angular-notifier';
 import { AnalysisComponent } from './analysis/analysis.component';
+import { TagCloudModule } from 'angular-tag-cloud-module';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { AnalysisComponent } from './analysis/analysis.component';
     CommonModule,
     BrowserAnimationsModule,
     ChartsModule,
+    TagCloudModule,
     NotifierModule.withConfig({
       position: {
         horizontal: {
