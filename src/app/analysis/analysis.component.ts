@@ -22,7 +22,6 @@ export class AnalysisComponent implements OnInit {
   constructor(private analysisSerivce: AnalysisService) { }
 
   update(): void {
-    console.log(`limit is ${this.limit} and selected is ${this.selected}`);
     this.analysisSerivce.getAnalysis(this.selected, this.limit).subscribe(res => {
       this.data = res;
       this.tagCloudComponent.reDraw();
