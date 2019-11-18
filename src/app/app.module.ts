@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app.routes';
-import { BsDropdownModule, CollapseModule, PaginationModule } from 'ngx-bootstrap';
+import { BsDropdownModule, CollapseModule, PaginationModule, TypeaheadModule } from 'ngx-bootstrap';
 import { EventComponent } from './event/event.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +22,7 @@ import { AppMapComponent } from './app-map/app-map.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SearchComponent } from './search/search.component';
 import { NotifierModule } from 'angular-notifier';
+import { AnalysisComponent } from './analysis/analysis.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NotifierModule } from 'angular-notifier';
     ChartsComponent,
     SidebarComponent,
     AppMapComponent,
-    SearchComponent
+    SearchComponent,
+    AnalysisComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { NotifierModule } from 'angular-notifier';
     ModalModule.forRoot(),
     PaginationModule.forRoot(),
     CollapseModule.forRoot(),
+    TypeaheadModule.forRoot(),
     CommonModule,
     BrowserAnimationsModule,
     ChartsModule,

@@ -4,6 +4,7 @@ import { EventComponent } from './event/event.component';
 import { ChartsComponent } from './charts/charts.component';
 import { AppMapComponent } from './app-map/app-map.component';
 import { SearchComponent } from './search/search.component';
+import { AnalysisComponent } from './analysis/analysis.component';
 
 export const AppRoutes: Routes = [
   {
@@ -39,6 +40,13 @@ export const AppRoutes: Routes = [
         component: SearchComponent,
         data: {
           breadcrumb: 'Search'
+        }
+      },
+      {
+        path: 'analysis',
+        component: AnalysisComponent,
+        data: {
+          breadcrumb: 'Analysis'
         }
       }
     ]
