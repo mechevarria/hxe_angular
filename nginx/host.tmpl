@@ -1,13 +1,7 @@
 server {
-  listen 80;
-  return 301 https://$host$request_uri;
-}
-server {
   gzip                on;
   gzip_types          text/css application/json application/javascript;
-  listen              443 ssl;
-  ssl_certificate     /etc/nginx/host.cert;
-  ssl_certificate_key /etc/nginx/host.key;
+  listen              80;
   server_name         localhost;
 
   location / {
