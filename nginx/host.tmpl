@@ -6,7 +6,6 @@ server {
   gzip                on;
   gzip_types          text/css application/json application/javascript;
   listen              443 ssl;
-  listen              [::]:443 ssl;
   ssl_certificate     /etc/nginx/host.cert;
   ssl_certificate_key /etc/nginx/host.key;
   server_name         localhost;
