@@ -9,7 +9,7 @@ import { MessageService } from '../message/message.service';
   styleUrls: ['./analysis.component.css']
 })
 export class AnalysisComponent implements OnInit {
-  @ViewChild(TagCloudComponent, {static: false}) tagCloudComponent: TagCloudComponent;
+  @ViewChild(TagCloudComponent, { static: false }) tagCloudComponent: TagCloudComponent;
 
   selected: string = '';
   types: string[] = [];
@@ -24,9 +24,11 @@ export class AnalysisComponent implements OnInit {
 
   update(): void {
     this.analysisSerivce.getAnalysis(this.selected, this.limit).subscribe(res => {
-      this.data = res;
-      this.tagCloudComponent.reDraw();
-      this.messageService.success(`Successfully updated word cloud for '${this.selected}'`);
+      if (res !== null) {
+        this.data = res;
+        this.tagCloudComponent.reDraw();
+        this.messageService.success(`Successfully updated word cloud for '${this.selected}'`);
+      }
     })
 
   }
