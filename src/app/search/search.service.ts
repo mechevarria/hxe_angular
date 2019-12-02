@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class SearchService {
 
-  private url = '/api/search.xsjs';
+  private url = '/api/search';
 
   constructor(private messageService: MessageService, private http: HttpClient) {
   }

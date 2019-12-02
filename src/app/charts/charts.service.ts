@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ChartsService {
 
-  private url = '/api/chart.xsjs';
+  private url = '/api/chart';
 
   constructor(private messageService: MessageService, private http: HttpClient) {
   }

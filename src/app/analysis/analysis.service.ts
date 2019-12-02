@@ -9,8 +9,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class AnalysisService {
 
-  private typesUrl = '/api/types.xsjs';
-  private analysisUrl = '/api/analysis.xsjs';
+  private typesUrl = '/api/types';
+  private analysisUrl = '/api/analysis';
 
   constructor(private messageService: MessageService, private http: HttpClient) {
   }
