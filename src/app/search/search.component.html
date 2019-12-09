@@ -3,8 +3,8 @@
     <div class="card-header">Search</div>
     <div class="card-body">
       <form (ngSubmit)="load()" #userForm="ngForm">
-        <div class="d-flex flex-row mb-3">
-          <div class="flex-fill mr-3">
+        <div class="d-flex flex-wrap">
+          <div class="mr-3 mb-3">
             <div class="input-group">
               <div class="input-group-prepend">
                 <label class="input-group-text">Result Limit</label>
@@ -17,7 +17,7 @@
               </select>
             </div>
           </div>
-          <div class="flex-fill mr-3">
+          <div class="mr-3 mb-3">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <label class="input-group-text">Fuzzy</label>
@@ -31,7 +31,7 @@
                 </select>
               </div>
             </div>
-          <div class="flex-fill">
+          <div class="mb-3">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">

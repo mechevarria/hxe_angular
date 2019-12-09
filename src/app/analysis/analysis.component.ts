@@ -15,8 +15,7 @@ export class AnalysisComponent implements OnInit {
   types: string[] = [];
   limit: number = 30;
   options: CloudOptions = {
-    height: 600,
-    overflow: false
+    height: 600
   }
   data: CloudData[] = [];
 

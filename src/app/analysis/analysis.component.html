@@ -2,8 +2,8 @@
   <div class="card-header">Text Analysis</div>
   <div class="card-body">
     <form (ngSubmit)="update()" #analysisForm="ngForm">
-      <div class="d-flex flex-row mb-3">
-        <div class="flex-fill mr-3">
+      <div class="d-flex flex-wrap">
+        <div class="mb-3 mr-3">
           <div class="input-group">
             <input [(ngModel)]="selected" id="selected" name="selected" [typeahead]="types"
               placeholder="Text Analysis Type" class="form-control" autocomplete="off">
@@ -12,7 +12,7 @@
             </div>
           </div>
         </div>
-        <div class="flex-fill">
+        <div class="mb-3 mr-3">
           <div class="input-group">
             <div class="input-group-prepend">
               <label class="input-group-text">Result Limit</label>
@@ -27,7 +27,7 @@
       </div>
     </form>
     <div class="d-flex justify-content-center">
-      <angular-tag-cloud [data]="data" [height]="options.height" [overflow]="options.overflow">
+      <angular-tag-cloud [data]="data" [height]="options.height">
       </angular-tag-cloud>
     </div>
   </div>
