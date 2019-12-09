@@ -26,10 +26,12 @@
               "node_modules/mapbox-gl/dist/mapbox-gl.css",
               "node_modules/@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css",
               "node_modules/angular-notifier/styles.css",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/chart.js/dist/Chart.min.js"
+              "node_modules/chart.js/dist/Chart.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"
             ]
           },
           "configurations": {
