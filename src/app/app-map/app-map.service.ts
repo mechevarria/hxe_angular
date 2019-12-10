@@ -10,7 +10,7 @@ import { Polygon } from 'geojson';
   providedIn: 'root'
 })
 export class AppMapService {
-  private mapUrl = 'api/map';
+  private mapUrl = '/api/map';
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
 
