@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cp -R dist/* ~/git/hxe_mta/demo_web/webapp
+cp -R dist/* ~/git/clouid_mta/angular/webapp
