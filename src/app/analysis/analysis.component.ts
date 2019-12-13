@@ -14,9 +14,6 @@ export class AnalysisComponent implements OnInit {
   selected: string = '';
   types: string[] = [];
   limit: number = 30;
-  options: CloudOptions = {
-    height: 600
-  }
   data: CloudData[] = [];
 
   constructor(private analysisSerivce: AnalysisService, private messageService: MessageService) { }
