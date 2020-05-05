@@ -1,4 +1,4 @@
-# HXE Angular
+# SAP Cloud Platform Angular
 
 Client appliation for [SAP HANA](https://www.sap.com/products/hana.html) services that taking advantage of the built-in REST, Search and Spatial engines. The backend project is located at [github/mechevarria/hxe_mta](https://github.com/mechevarria/hxe_mta). This project was generated with [Angular CLI](https://github.com/angular/angular-cli). [CoreUI](https://coreui.io/docs/getting-started/introduction/) is already integrated.  The project is configured to run as a [docker](https://docs.docker.com/install/) container. Data is provided by the [Armed Conflict Location & Event Data](https://www.acleddata.com) project
 
